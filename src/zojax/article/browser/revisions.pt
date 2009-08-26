@@ -1,0 +1,6 @@
+<h1>Article revisions for: <tal:block content="context/title" /></h1>
+<tal:block tal:content="structure pageelement:content.byline" />
+<tal:block tal:content="structure pageelement:content.description" />
+<br />
+
+<tal:block content="structure provider:article.revisions" />

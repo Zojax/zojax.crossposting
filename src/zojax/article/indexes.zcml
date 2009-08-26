@@ -1,0 +1,26 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:z3ext="http://namespaces.zope.org/z3ext"
+   i18n_domain="zojax.article">
+
+  <utility
+     name="articleId"
+     component=".indexes.articleId"
+     provides="z3ext.catalog.interfaces.ICatalogIndexFactory" />
+
+  <utility
+     name="articleRevId"
+     component=".indexes.articleRevId"
+     provides="z3ext.catalog.interfaces.ICatalogIndexFactory" />
+
+  <utility
+     name="articleActiveStatus"
+     component=".indexes.articleActiveStatus"
+     provides="z3ext.catalog.interfaces.ICatalogIndexFactory" />
+
+  <utility
+     name="articleDestination"
+     component=".indexes.articleDestination"
+     provides="z3ext.catalog.interfaces.ICatalogIndexFactory" />
+
+</configure>

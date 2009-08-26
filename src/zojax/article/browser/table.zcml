@@ -1,0 +1,25 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <!-- content.revisions table -->
+  <adapter
+     name="article.revisions"
+     provides="zope.contentprovider.interfaces.IContentProvider"
+     factory=".table.RevisionsTable" />
+
+  <adapter
+     name="id"
+     factory=".table.IdColumn" />
+
+  <adapter
+     name="principal"
+     factory=".table.PrincipalColumn" />
+
+  <adapter
+     name="date"
+     factory=".table.DateColumn" />
+
+  <adapter
+     name="active"
+     factory=".table.ActiveColumn" />
+
+</configure>

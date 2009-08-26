@@ -1,0 +1,72 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:z3ext="http://namespaces.zope.org/z3ext"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   i18n_domain="zojax.article">
+
+  <include file="table.zcml" />
+
+  <z3ext:pagelet
+     name="index.html"
+     for="..interfaces.IArticle"
+     template="article.pt"
+     provides="z3ext.content.type.interfaces.IContentView"
+     permission="zope.View" />
+
+  <!-- actions cartegory -->
+  <utility
+     name="article.revisions"
+     component=".actions.ContentRevisions" />
+
+  <!-- publish actions -->
+  <adapter
+     name="zojax.article.publish"
+     factory=".actions.PublishArticleAction" />
+
+  <browser:icon
+     name="zmi_icon"
+     file="icons/publish.png"
+     for=".interfaces.IPublishArticleAction" />
+
+  <z3ext:pagelet
+     name="publish.html"
+     for="..interfaces.IArticleDraft"
+     template="publish.pt"
+     class=".publish.PublishForm"
+     permission="zojax.ManageArticle" />
+
+  <!-- revision actions -->
+  <adapter
+     name="zojax.article.newrevision"
+     factory=".actions.NewArticleRevisionAction" />
+
+  <browser:icon
+     name="zmi_icon"
+     file="icons/publish.png"
+     for=".interfaces.INewRevisionAction" />
+
+  <z3ext:pagelet
+     name="newrevision.html"
+     for="..interfaces.IArticle"
+     template="newrevision.pt"
+     class=".newrevision.NewRevisionForm"
+     permission="zojax.ManageArticle" />
+
+  <!-- revision actions -->
+  <adapter
+     name="zojax.article.revisions"
+     factory=".revisions.RevisionsAction" />
+
+  <browser:icon
+     name="zmi_icon"
+     file="icons/revisions.png"
+     for=".interfaces.IRevisionsAction" />
+
+  <z3ext:pagelet
+     name="articlerevisions"
+     for="..interfaces.IArticle"
+     template="revisions.pt"
+     class=".revisions.RevisionsView"
+     permission="zope.View" />
+
+</configure>

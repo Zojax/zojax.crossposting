@@ -1,0 +1,56 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:z3ext="http://namespaces.zope.org/z3ext"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   i18n_domain="zojax.article">
+
+  <z3ext:reservedNames
+     names="articles"
+     for="z3ext.content.space.interfaces.IContentSpace" />
+
+  <z3ext:content
+     name="zojax.articles"
+     title="Articles workspace"
+     class=".workspace.Articles"
+     schema=".interfaces.IArticles"
+     contains="zojax.article"
+     type="z3ext.content.type.interfaces.IInactiveType" />
+
+  <!-- articles workspace -->
+  <class class=".workspace.Articles">
+    <implements interface="z3ext.catalog.interfaces.ISearchContext" />
+    <implements interface="z3ext.extensions.interfaces.IExtensible" />
+    <implements interface="z3ext.ownership.interfaces.IInheritOwnership" />
+    <implements interface="z3ext.content.type.interfaces.IRenameNotAllowed" />
+    <implements interface="z3ext.content.type.interfaces.ISearchableContent" />
+    <implements interface="z3ext.content.type.interfaces.IUnremoveableContent" />
+    <implements interface="z3ext.content.type.interfaces.IContainerContentsAware" />
+
+
+    <require
+       permission="zope.View"
+       interface=".interfaces.IArticles
+		  zope.app.container.interfaces.IReadContainer" />
+
+    <require
+       permission="z3ext.ModifyContent"
+       set_schema=".interfaces.IArticles"
+       interface="zope.app.container.interfaces.IWriteContainer" />
+  </class>
+
+  <!-- articles workspace factory -->
+  <adapter
+     name="articles"
+     factory=".workspace.ArticlesFactory" />
+
+  <adapter
+     name="articles"
+     for="z3ext.groups.interfaces.IGroup"
+     factory=".workspace.ArticlesFactory" />
+
+  <adapter
+     name="articles"
+     for="z3ext.project.interfaces.IProject"
+     factory=".workspace.ArticlesFactory" />
+
+</configure>

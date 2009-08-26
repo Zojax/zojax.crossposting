@@ -1,0 +1,31 @@
+<tal:block content="structure pageelement:content.header" />
+<br />
+
+<h2>Select Destination</h2>
+<br />
+
+<form method="post" tal:attributes="action request/URL">
+  <div class="z-form-fieldset">
+    <ul class="z-listing" tal:condition="view/articles">
+      <li tal:repeat="item view/articles">
+	<div class="z-listing-icon">
+	  <input type="radio" name="destination"
+		 tal:attributes="value item/id; checked item/selected" />
+	</div>
+	<div class="z-listing-details">
+	  <a tal:content="structure item/title" target="_blank"
+	     tal:attributes="href item/url">label</a>
+	  in
+	  <a tal:content="structure item/space" target="_blank"
+	     tal:attributes="href item/spaceUrl">label</a>
+	</div>
+      </li>
+    </ul>
+    <div class="visualClear"></div>
+  </div>
+  <div class="z-form-controls">
+    <hr />
+    <input type="submit" name="form.button.newrevision"
+	   value="Make New Revision" class="z-form-button" />
+  </div>
+</form>

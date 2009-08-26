@@ -1,0 +1,38 @@
+<tal:block i18n:domain="zojax.article" tal:define="text context/text">
+  <p tal:condition="not:text" class="discreet" i18n:translate="">
+    This item does not have any body text, click the edit tab to change it.
+  </p>
+      
+  <div tal:condition="text" tal:content="structure text/cooked">
+    Body Text
+  </div>
+</tal:block>
+
+
+<div class="z-table-container">
+  <br />
+  <table class="z-table">
+    <tbody>
+      <tr class="even">
+	<th>Article Id</th>
+	<td tal:content="context/articleId"></td>
+      </tr>
+      <tr>
+	<th>Article RevId</th>
+	<td tal:content="context/articleRevId"></td>
+      </tr>
+      <tr class="even">
+	<th>Article Source</th>
+	<td tal:content="context/articleSource"></td>
+      </tr>
+      <tr>
+	<th>Article Destination</th>
+	<td tal:content="context/articleDestination"></td>
+      </tr>
+      <tr class="even">
+	<th>Article Active Status</th>
+	<td tal:content="context/articleActiveStatus"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
