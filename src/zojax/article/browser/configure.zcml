@@ -10,8 +10,23 @@
      name="index.html"
      for="..interfaces.IArticle"
      template="article.pt"
+     class=".article.ArticleView"
      provides="z3ext.content.type.interfaces.IContentView"
      permission="zope.View" />
+
+  <!-- creators -->
+  <z3ext:pagelet
+     name="creators"
+     type="wizard.step"
+     for="..interfaces.IArticle
+	  z3ext.content.forms.interfaces.IEditContentWizard"
+     class=".creators.CreatorsEditForm"
+     permission="z3ext.ModifyContent" />
+
+  <z3ext:pageelement
+     name="content.byline"
+     for="..interfaces.IArticle" 
+     class=".article.ArticleByLine" />
 
   <!-- actions cartegory -->
   <utility

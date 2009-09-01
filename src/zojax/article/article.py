@@ -67,7 +67,7 @@ def articleAddedHandler(article, event):
         interface.alsoProvides(article, IArticleDraft)
 
     if article.articleRevId is None:
-        revId = -1
+        revId = 0
         articles = getUtility(ICatalog).searchResults(
             noPublishing=True, noSecurityChecks=True,
             type = {'any_of': ('zojax.article',)},

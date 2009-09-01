@@ -21,6 +21,8 @@
     <implements interface="z3ext.content.type.interfaces.ISearchableContent" />
     <implements interface="z3ext.content.type.interfaces.ITitleBasedName" />
     <implements interface="z3ext.content.discussion.interfaces.IDiscussible" />
+    <implements
+       interface="zope.dublincore.interfaces.IDCDescriptiveProperties" />
 
     <require
        permission="zope.View"

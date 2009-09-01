@@ -22,9 +22,12 @@
     <implements interface="z3ext.extensions.interfaces.IExtensible" />
     <implements interface="z3ext.ownership.interfaces.IInheritOwnership" />
     <implements interface="z3ext.content.type.interfaces.IRenameNotAllowed" />
-    <implements interface="z3ext.content.type.interfaces.ISearchableContent" />
-    <implements interface="z3ext.content.type.interfaces.IUnremoveableContent" />
-    <implements interface="z3ext.content.type.interfaces.IContainerContentsAware" />
+    <implements
+       interface="z3ext.content.type.interfaces.ISearchableContent" />
+    <implements
+       interface="z3ext.content.type.interfaces.IUnremoveableContent" />
+    <implements 
+       interface="z3ext.content.type.interfaces.IContainerContentsAware" />
 
 
     <require
