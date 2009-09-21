@@ -26,16 +26,17 @@ from zope.app.security.interfaces import IAuthentication, PrincipalLookupError
 from z3ext.table.table import Table
 from z3ext.table.column import Column, AttributeColumn
 from z3ext.catalog.interfaces import ICatalog
+from z3ext.content.type.interfaces import IContentType
 from z3ext.formatter.utils import getFormatter
 from z3ext.content.table.author import AuthorNameColumn
-from zojax.article.interfaces import IArticle
+from zojax.article.interfaces import IRevisionItem, IArticle
 
 from interfaces import _, IRevisionsTable
 
 
 class RevisionsTable(Table):
     interface.implements(IRevisionsTable)
-    component.adapts(IArticle, interface.Interface, interface.Interface)
+    component.adapts(IRevisionItem, interface.Interface, interface.Interface)
 
     title = _('Revisions')
 
@@ -45,10 +46,12 @@ class RevisionsTable(Table):
     cssClass = 'z-table z-content-revisions'
 
     def initDataset(self):
+        print IContentType(self.context).name
+
         self.dataset = getUtility(ICatalog).searchResults(
             noPublishing=True, showHidden=True,
             sort_on='articleRevId', sort_order='reverse',
-            type = {'any_of': ('zojax.article',)},
+            type = {'any_of': (IContentType(self.context).name,)},
             articleId = {'any_of': (self.context.articleId,)})
 
 

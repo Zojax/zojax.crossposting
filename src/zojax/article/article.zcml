@@ -48,6 +48,4 @@
   <adapter factory=".article.Sized" />
   <adapter factory=".article.ArticleSearchableText" />
 
-  <subscriber handler=".article.articleAddedHandler" />
-
 </configure>

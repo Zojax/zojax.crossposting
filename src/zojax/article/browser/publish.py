@@ -30,6 +30,7 @@ from z3c.breadcrumb.interfaces import IBreadcrumb
 
 from z3ext.catalog.utils import listAllowedRoles
 from z3ext.catalog.interfaces import ICatalog
+from z3ext.content.type.interfaces import IContentType
 from z3ext.statusmessage.interfaces import IStatusMessage
 
 from zojax.article.interfaces import _, IArticles, IArticleDraft
@@ -60,7 +61,7 @@ class PublishForm(object):
                 # set status
                 articles = getUtility(ICatalog).searchResults(
                     noPublishing=True, noSecurityChecks=True, showHidden=True,
-                    type = {'any_of': ('zojax.article',)},
+                    type = {'any_of': (IContentType(context).name,)},
                     articleId = {'any_of': (context.articleId,)})
 
                 for article in articles:

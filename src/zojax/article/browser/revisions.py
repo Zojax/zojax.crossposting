@@ -20,13 +20,13 @@ from zope.location import LocationProxy
 from zope.traversing.browser import absoluteURL
 from zope.publisher.interfaces import NotFound
 from z3ext.content.actions.action import Action
-from zojax.article.interfaces import IArticle
+from zojax.article.interfaces import IRevisionItem
 
 from interfaces import _, IRevisionsAction
 
 
 class RevisionsAction(Action):
-    component.adapts(IArticle, interface.Interface)
+    component.adapts(IRevisionItem, interface.Interface)
     interface.implements(IRevisionsAction)
 
     weight = 901

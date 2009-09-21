@@ -15,6 +15,8 @@
 
 $Id$
 """
+from BTrees.Length import Length
+
 from zope import interface, component
 from zope.size import byteDisplay
 from zope.size.interfaces import ISized
@@ -28,12 +30,12 @@ from z3ext.content.type.searchable import ContentSearchableText
 from z3ext.richtext.field import RichTextProperty
 from z3ext.content.revision.revisions import Revisions, IRevisions
 
+from revision import RevisionItem
 from interfaces import \
     IArticle, IArticleDraft, IArticleDrafts, IArticleManagement
 
-from BTrees.Length import Length
 
-class Article(PersistentItem, Revisions):
+class Article(PersistentItem, Revisions, RevisionItem):
     interface.implements(
         IArticle, IArticleManagement, IItemPublishing, IRevisions)
 
@@ -44,40 +46,7 @@ class Article(PersistentItem, Revisions):
     #text = RichTextProperty(IArticle['text'])
     #abstract = RichTextProperty(IArticle['abstract'])
 
-    articleId = None
-    articleRevId = None
-    articleSource = None
-    articleDestination = None
-    articleActiveStatus = 3 # 1 - active, 2 - not active, 3 - draft
-
     _revisions_length = Length(0)
-
-
-@component.adapter(IArticle, IIntIdAddedEvent)
-def articleAddedHandler(article, event):
-    ids = getUtility(IIntIds)
-
-    if article.articleId is None:
-        article.articleId = ids.getId(article)
-
-    if article.articleSource is None:
-        article.articleSource = ids.getId(article.__parent__)
-
-    if IArticleDrafts.providedBy(article.__parent__):
-        interface.alsoProvides(article, IArticleDraft)
-
-    if article.articleRevId is None:
-        revId = 0
-        articles = getUtility(ICatalog).searchResults(
-            noPublishing=True, noSecurityChecks=True,
-            type = {'any_of': ('zojax.article',)},
-            articleId = {'any_of': (article.articleId,)})
-
-        for article in articles:
-            if article.articleRevId > revId:
-                revId = article.articleRevId
-
-        article.articleRevId = revId + 1
 
 
 class Sized(object):

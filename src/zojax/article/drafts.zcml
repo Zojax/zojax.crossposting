@@ -9,7 +9,7 @@
      name="zojax.articledrafts"
      schema=".interfaces.IArticleDrafts"
      class=".drafts.ArticleDrafts"
-     contains="zojax.article"
+     contains="zojax.article zojax.filearticle"
      type="z3ext.content.type.interfaces.IInactiveType" />
 
   <!-- article drafts workspace -->

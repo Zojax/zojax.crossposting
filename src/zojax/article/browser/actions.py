@@ -20,7 +20,7 @@ from zope.traversing.browser import absoluteURL
 from z3ext.content.actions.action import Action
 from z3ext.content.actions.categories import ActionCategory
 
-from zojax.article.interfaces import _, IArticle, IArticleDraft
+from zojax.article.interfaces import _, IRevisionItem, IArticle, IArticleDraft
 
 from interfaces import \
     IPublishArticleAction, INewRevisionAction, IContentRevisionsCategory
@@ -45,7 +45,7 @@ class PublishArticleAction(Action):
 
 class NewArticleRevisionAction(Action):
     interface.implements(INewRevisionAction)
-    component.adapts(IArticle, interface.Interface)
+    component.adapts(IRevisionItem, interface.Interface)
 
     title = _('New Revision')
     permission = 'zojax.ManageArticle'

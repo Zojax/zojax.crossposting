@@ -16,22 +16,29 @@
 $Id$
 """
 from zope import interface, schema
+from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
 from zope.i18nmessageid import MessageFactory
 from z3ext.richtext.field import RichText
+from z3ext.filefield.field import FileField
+from z3ext.widget.radio.field import RadioChoice
 from z3ext.content.type.interfaces import IItem
 from z3ext.content.space.interfaces import IWorkspace, IWorkspaceFactory
 
 _ = MessageFactory('zojax.article')
 
 
-class IArticle(interface.Interface):
-    """ article  """
+class IRevisionItem(interface.Interface):
+    """ revision item """
 
     articleId = interface.Attribute('Article Id')
     articleRevId = interface.Attribute('Revision Id')
     articleSource = interface.Attribute('Source')
     articleDestination = interface.Attribute('Destination')
     articleActiveStatus = interface.Attribute('Active Revision')
+
+
+class IArticle(IRevisionItem):
+    """ article  """
 
     title = schema.TextLine(
         title = _('Title'),
@@ -59,6 +66,35 @@ class IArticle(interface.Interface):
 
 class IArticleDraft(interface.Interface):
     """ marker interface for article draft """
+
+
+dispositionVocabulary = SimpleVocabulary((
+        SimpleTerm('attachment', 'attachment', _('Download')),
+        SimpleTerm('inline', 'inline', _('View inline'))))
+
+
+class IFile(IRevisionItem):
+
+    title = schema.TextLine(
+        title = _(u'Title'),
+        description = _(u'File title.'),
+        required = False)
+
+    abstract = RichText(
+        title = _(u'Abstract'),
+        description = _(u'Article abstract.'),
+        required = False)
+
+    data = FileField(
+        title=_(u'Data'),
+        description=_(u'The actual content of the file.'),
+        required = False)
+
+    disposition = RadioChoice(
+        title = _(u'How do you want to view this file.'),
+        vocabulary = dispositionVocabulary,
+        default = 'inline',
+        required = True)
 
 
 class IArticleManagement(interface.Interface):

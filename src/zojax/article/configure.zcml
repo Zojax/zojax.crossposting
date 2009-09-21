@@ -15,6 +15,9 @@
   <!-- article drafts -->
   <include file="drafts.zcml" />
 
+  <!-- file -->
+  <include file="file.zcml" />
+
   <!--indexes -->
   <include file="indexes.zcml" />
 
@@ -23,5 +26,7 @@
 
   <!-- translations -->
   <i18n:registerTranslations directory="locales"/>
+
+  <subscriber handler=".revision.revisionItemAddedHandler" />
 
 </configure>

@@ -15,21 +15,22 @@
 
 $Id$
 """
-from interfaces import IArticle
 from zope.security.proxy import removeSecurityProxy
 from zc.catalog.catalogindex import ValueIndex, SetIndex
 from z3ext.content.type.interfaces import IContentType
 from z3ext.catalog.utils import Indexable, getAccessList
 
+from interfaces import IArticle, IRevisionItem
+
 
 def articleId():
-    return ValueIndex('articleId', IArticle)
+    return ValueIndex('articleId', IRevisionItem)
 
 def articleRevId():
-    return ValueIndex('articleRevId', IArticle)
+    return ValueIndex('articleRevId', IRevisionItem)
 
 def articleActiveStatus():
-    return ValueIndex('articleActiveStatus', IArticle)
+    return ValueIndex('articleActiveStatus', IRevisionItem)
 
 def articleDestination():
     return SetIndex(

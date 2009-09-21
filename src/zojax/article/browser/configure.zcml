@@ -18,14 +18,14 @@
   <z3ext:pagelet
      name="creators"
      type="wizard.step"
-     for="..interfaces.IArticle
+     for="..interfaces.IRevisionItem
 	  z3ext.content.forms.interfaces.IEditContentWizard"
      class=".creators.CreatorsEditForm"
      permission="z3ext.ModifyContent" />
 
   <z3ext:pageelement
      name="content.byline"
-     for="..interfaces.IArticle" 
+     for="..interfaces.IRevisionItem"
      class=".article.ArticleByLine" />
 
   <!-- actions cartegory -->
@@ -62,7 +62,7 @@
 
   <z3ext:pagelet
      name="newrevision.html"
-     for="..interfaces.IArticle"
+     for="..interfaces.IRevisionItem"
      template="newrevision.pt"
      class=".newrevision.NewRevisionForm"
      permission="zojax.ManageArticle" />
@@ -79,9 +79,39 @@
 
   <z3ext:pagelet
      name="articlerevisions"
-     for="..interfaces.IArticle"
+     for="..interfaces.IRevisionItem"
      template="revisions.pt"
      class=".revisions.RevisionsView"
+     permission="zope.View" />
+
+  <!-- file -->
+  <browser:icon
+     name="zmi_icon"
+     for="..interfaces.IFile"
+     file="file_icon.gif" />
+
+  <browser:icon
+     name="zmi_icon"
+     for="z3ext.content.zojax_filearticle"
+     file="file_icon.gif" />
+  
+  <browser:defaultView
+     name="index.html"
+     for="..interfaces.IFile" />
+
+  <z3ext:pagelet
+     name="index.html"
+     for="..interfaces.IFile"
+     template="fileview.pt"
+     class=".fileviews.FileView"
+     provides="z3ext.content.type.interfaces.IContentView"
+     permission="zope.View" />
+
+  <browser:page
+     name="download.html"
+     for="..interfaces.IFile"
+     attribute="show"
+     class=".fileviews.FileDownload"
      permission="zope.View" />
 
 </configure>
