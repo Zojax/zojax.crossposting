@@ -11,7 +11,7 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ##############################################################################
-""" 
+"""
 
 $Id$
 """
@@ -38,7 +38,7 @@ class CreatorsEditForm(WizardStepForm):
 
     fields = Fields(ICreators)
     weight = 110
-    
+
     title = u'Co-authors'
     label = u'Change co-authors list'
 
