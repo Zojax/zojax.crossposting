@@ -23,12 +23,12 @@ from zope.traversing.browser import absoluteURL
 from zope.app.intid.interfaces import IIntIds
 from zope.app.security.interfaces import IAuthentication, PrincipalLookupError
 
-from z3ext.table.table import Table
-from z3ext.table.column import Column, AttributeColumn
-from z3ext.catalog.interfaces import ICatalog
-from z3ext.content.type.interfaces import IContentType
-from z3ext.formatter.utils import getFormatter
-from z3ext.content.table.author import AuthorNameColumn
+from zojax.table.table import Table
+from zojax.table.column import Column, AttributeColumn
+from zojax.catalog.interfaces import ICatalog
+from zojax.content.type.interfaces import IContentType
+from zojax.formatter.utils import getFormatter
+from zojax.content.table.author import AuthorNameColumn
 from zojax.article.interfaces import IRevisionItem, IArticle
 
 from interfaces import _, IRevisionsTable

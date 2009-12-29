@@ -21,12 +21,12 @@ from zope.size import byteDisplay
 from zope.size.interfaces import ISized
 from zope.app.container.contained import NameChooser
 
-from z3ext.content.type.item import PersistentItem
-from z3ext.content.type.contenttype import ContentType
-from z3ext.content.type.interfaces import IItemPublishing
-from z3ext.richtext.field import RichTextProperty
-from z3ext.filefield.field import FileFieldProperty
-from z3ext.filefield.interfaces import IFile as IFileData
+from zojax.content.type.item import PersistentItem
+from zojax.content.type.contenttype import ContentType
+from zojax.content.type.interfaces import IItemPublishing
+from zojax.richtext.field import RichTextProperty
+from zojax.filefield.field import FileFieldProperty
+from zojax.filefield.interfaces import IFile as IFileData
 
 from revision import RevisionItem
 from interfaces import IFile, IArticleDraft, IArticleDrafts, IArticleManagement

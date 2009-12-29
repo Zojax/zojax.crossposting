@@ -16,7 +16,7 @@
 $Id$
 """
 from zope import interface
-from z3ext.content.actions.interfaces import IAction, IManageContentCategory
+from zojax.content.actions.interfaces import IAction, IManageContentCategory
 
 from zojax.article.interfaces import _
 

@@ -18,11 +18,11 @@ $Id$
 from zope import interface, schema
 from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
 from zope.i18nmessageid import MessageFactory
-from z3ext.richtext.field import RichText
-from z3ext.filefield.field import FileField
-from z3ext.widget.radio.field import RadioChoice
-from z3ext.content.type.interfaces import IItem
-from z3ext.content.space.interfaces import IWorkspace, IWorkspaceFactory
+from zojax.richtext.field import RichText
+from zojax.filefield.field import FileField
+from zojax.widget.radio.field import RadioChoice
+from zojax.content.type.interfaces import IItem
+from zojax.content.space.interfaces import IWorkspace, IWorkspaceFactory
 
 _ = MessageFactory('zojax.article')
 

@@ -1,33 +1,33 @@
 <configure
    xmlns="http://namespaces.zope.org/zope"
-   xmlns:z3ext="http://namespaces.zope.org/z3ext"
+   xmlns:zojax="http://namespaces.zope.org/zojax"
    xmlns:browser="http://namespaces.zope.org/browser"
    i18n_domain="zojax.article">
 
-  <z3ext:reservedNames
+  <zojax:reservedNames
      names="articles"
-     for="z3ext.content.space.interfaces.IContentSpace" />
+     for="zojax.content.space.interfaces.IContentSpace" />
 
-  <z3ext:content
+  <zojax:content
      name="zojax.articles"
      title="Articles workspace"
      class=".workspace.Articles"
      schema=".interfaces.IArticles"
      contains="zojax.article"
-     type="z3ext.content.type.interfaces.IInactiveType" />
+     type="zojax.content.type.interfaces.IInactiveType" />
 
   <!-- articles workspace -->
   <class class=".workspace.Articles">
-    <implements interface="z3ext.catalog.interfaces.ISearchContext" />
-    <implements interface="z3ext.extensions.interfaces.IExtensible" />
-    <implements interface="z3ext.ownership.interfaces.IInheritOwnership" />
-    <implements interface="z3ext.content.type.interfaces.IRenameNotAllowed" />
+    <implements interface="zojax.catalog.interfaces.ISearchContext" />
+    <implements interface="zojax.extensions.interfaces.IExtensible" />
+    <implements interface="zojax.ownership.interfaces.IInheritOwnership" />
+    <implements interface="zojax.content.type.interfaces.IRenameNotAllowed" />
     <implements
-       interface="z3ext.content.type.interfaces.ISearchableContent" />
+       interface="zojax.content.type.interfaces.ISearchableContent" />
     <implements
-       interface="z3ext.content.type.interfaces.IUnremoveableContent" />
+       interface="zojax.content.type.interfaces.IUnremoveableContent" />
     <implements 
-       interface="z3ext.content.type.interfaces.IContainerContentsAware" />
+       interface="zojax.content.type.interfaces.IContainerContentsAware" />
 
 
     <require
@@ -36,7 +36,7 @@
 		  zope.app.container.interfaces.IReadContainer" />
 
     <require
-       permission="z3ext.ModifyContent"
+       permission="zojax.ModifyContent"
        set_schema=".interfaces.IArticles"
        interface="zope.app.container.interfaces.IWriteContainer" />
   </class>
@@ -48,12 +48,12 @@
 
   <adapter
      name="articles"
-     for="z3ext.groups.interfaces.IGroup"
+     for="zojax.groups.interfaces.IGroup"
      factory=".workspace.ArticlesFactory" />
 
   <adapter
      name="articles"
-     for="z3ext.project.interfaces.IProject"
+     for="zojax.project.interfaces.IProject"
      factory=".workspace.ArticlesFactory" />
 
 </configure>

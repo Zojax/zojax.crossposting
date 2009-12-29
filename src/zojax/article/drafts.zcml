@@ -1,25 +1,25 @@
 <configure
    xmlns="http://namespaces.zope.org/zope"
-   xmlns:z3ext="http://namespaces.zope.org/z3ext"
+   xmlns:zojax="http://namespaces.zope.org/zojax"
    i18n_domain="zojax.article">
 
   <!-- content type -->
-  <z3ext:content
+  <zojax:content
      title="Article Drafts"
      name="zojax.articledrafts"
      schema=".interfaces.IArticleDrafts"
      class=".drafts.ArticleDrafts"
      contains="zojax.article zojax.filearticle"
-     type="z3ext.content.type.interfaces.IInactiveType" />
+     type="zojax.content.type.interfaces.IInactiveType" />
 
   <!-- article drafts workspace -->
   <class class=".drafts.ArticleDrafts">
-    <implements interface="z3ext.catalog.interfaces.ISearchContext" />
-    <implements interface="z3ext.extensions.interfaces.IExtensible" />
-    <implements interface="z3ext.ownership.interfaces.IInheritOwnership" />
-    <implements interface="z3ext.content.type.interfaces.IRenameNotAllowed" />
-    <implements interface="z3ext.content.type.interfaces.ISearchableContent" />
-    <implements interface="z3ext.content.type.interfaces.IUnremoveableContent" />
+    <implements interface="zojax.catalog.interfaces.ISearchContext" />
+    <implements interface="zojax.extensions.interfaces.IExtensible" />
+    <implements interface="zojax.ownership.interfaces.IInheritOwnership" />
+    <implements interface="zojax.content.type.interfaces.IRenameNotAllowed" />
+    <implements interface="zojax.content.type.interfaces.ISearchableContent" />
+    <implements interface="zojax.content.type.interfaces.IUnremoveableContent" />
 
     <require
        permission="zope.View"
@@ -27,7 +27,7 @@
 		  zope.app.container.interfaces.IReadContainer" />
 
     <require
-       permission="z3ext.ModifyContent"
+       permission="zojax.ModifyContent"
        set_schema=".interfaces.IArticleDrafts"
        interface="zope.app.container.interfaces.IWriteContainer" />
   </class>
@@ -35,12 +35,12 @@
   <!-- article drafts workspace factory -->
   <adapter
      name="articledrafts"
-     for="z3ext.groups.interfaces.IGroup"
+     for="zojax.groups.interfaces.IGroup"
      factory=".drafts.ArticleDraftsFactory" />
 
   <adapter
      name="articledrafts"
-     for="z3ext.project.interfaces.IProject"
+     for="zojax.project.interfaces.IProject"
      factory=".drafts.ArticleDraftsFactory" />
 
 </configure>

@@ -17,8 +17,8 @@ $Id$
 """
 from zope import interface, component
 from zope.traversing.browser import absoluteURL
-from z3ext.content.actions.action import Action
-from z3ext.content.actions.categories import ActionCategory
+from zojax.content.actions.action import Action
+from zojax.content.actions.categories import ActionCategory
 
 from zojax.article.interfaces import _, IRevisionItem, IArticle, IArticleDraft
 

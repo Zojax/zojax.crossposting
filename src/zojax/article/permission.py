@@ -17,8 +17,8 @@ $Id$
 """
 from zope import component, interface
 from zope.component import getUtility, queryAdapter
-from z3ext.content.space.interfaces import IWorkspaceFactory
-from z3ext.content.permissions.permission import ContentPermission
+from zojax.content.space.interfaces import IWorkspaceFactory
+from zojax.content.permissions.permission import ContentPermission
 
 
 class SpacePermission(ContentPermission):

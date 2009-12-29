@@ -1,6 +1,6 @@
 <configure
    xmlns="http://namespaces.zope.org/zope"
-   xmlns:z3ext="http://namespaces.zope.org/z3ext"
+   xmlns:zojax="http://namespaces.zope.org/zojax"
    xmlns:browser="http://namespaces.zope.org/browser"
    i18n_domain="zojax.article">
 
@@ -12,31 +12,31 @@
      id="zojax.ManageArticle"
      title="Manage article" />
 
-  <z3ext:permission
+  <zojax:permission
      permission="zojax.AddArticle"
-     category="z3ext.content.permissions.interfaces.IAddPermission" />
+     category="zojax.content.permissions.interfaces.IAddPermission" />
 
-  <z3ext:contentpermission
-     for="z3ext.content.space.interfaces.IContentSpace"
+  <zojax:contentpermission
+     for="zojax.content.space.interfaces.IContentSpace"
      permission="zojax.AddArticle"
-     managepermission="z3ext.ManageContentPermission"
+     managepermission="zojax.ManageContentPermission"
      class=".permission.SpacePermission"
-     category="z3ext.content.permissions.interfaces.IAddPermission" />
+     category="zojax.content.permissions.interfaces.IAddPermission" />
 
   <!-- default article drafts container permissions -->
   <permissions for=".interfaces.IArticleDrafts" name="default">
     <denyAll permission="zope.View" />
-    <denyAll permission="z3ext.ModifyContent" />
-    <denyAll permission="z3ext.DeleteContent" />
-    <denyAll permission="z3ext.changeOwnership" />
+    <denyAll permission="zojax.ModifyContent" />
+    <denyAll permission="zojax.DeleteContent" />
+    <denyAll permission="zojax.changeOwnership" />
 
-    <grant permission="z3ext.ModifyContent"
+    <grant permission="zojax.ModifyContent"
 	   role="content.Owner
 		 group.Member
 		 group.Manager
 		 zope.Manager" />
 
-    <grant permission="z3ext.DeleteContent"
+    <grant permission="zojax.DeleteContent"
 	   role="content.Owner
 		 zope.Manager" />
     
@@ -56,16 +56,16 @@
   <!-- default Article Draft permissions -->
   <permissions for=".interfaces.IArticleDraft" name="default">
     <denyAll permission="zope.View" />
-    <denyAll permission="z3ext.ModifyContent" />
-    <denyAll permission="z3ext.DeleteContent" />
+    <denyAll permission="zojax.ModifyContent" />
+    <denyAll permission="zojax.DeleteContent" />
 
-    <grant permission="z3ext.ModifyContent"
+    <grant permission="zojax.ModifyContent"
 	   role="content.Owner
 		 group.Member
 		 group.Manager
 		 zope.Manager" />
 
-    <grant permission="z3ext.DeleteContent"
+    <grant permission="zojax.DeleteContent"
 	   role="content.Owner
 		 group.Manager
 		 zope.Manager" />
@@ -91,8 +91,8 @@
   <!-- default Article permissions -->
   <permissions for=".interfaces.IArticle" name="default">
     <unsetAll permission="zope.View" />
-    <denyAll permission="z3ext.ModifyContent" />
-    <denyAll permission="z3ext.DeleteContent" />
+    <denyAll permission="zojax.ModifyContent" />
+    <denyAll permission="zojax.DeleteContent" />
     <denyAll permission="zope.app.dublincore.change" />
 
     <grant permission="zojax.ManageArticle"

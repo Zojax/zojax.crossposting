@@ -18,11 +18,11 @@ $Id$
 from zope import schema, interface
 from zope.dublincore.interfaces import IDCExtended
 
-from z3ext.layoutform import Fields
-from z3ext.wizard.step import WizardStepForm
-from z3ext.wizard.interfaces import ISaveable
-from z3ext.principal.field import UserField
-from z3ext.ownership.interfaces import IOwnership
+from zojax.layoutform import Fields
+from zojax.wizard.step import WizardStepForm
+from zojax.wizard.interfaces import ISaveable
+from zojax.principal.field import UserField
+from zojax.ownership.interfaces import IOwnership
 
 
 class ICreators(interface.Interface):

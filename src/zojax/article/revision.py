@@ -18,8 +18,8 @@ $Id$
 from zope import interface, component
 from zope.component import getUtility
 from zope.app.intid.interfaces import IIntIds, IIntIdAddedEvent
-from z3ext.catalog.interfaces import ICatalog
-from z3ext.content.type.interfaces import IContentType
+from zojax.catalog.interfaces import ICatalog
+from zojax.content.type.interfaces import IContentType
 
 from interfaces import IRevisionItem, IArticleDraft, IArticleDrafts
 

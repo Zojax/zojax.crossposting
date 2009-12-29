@@ -23,12 +23,12 @@ from zope.size.interfaces import ISized
 from zope.component import getUtility
 from zope.security import checkPermission
 from zope.app.intid.interfaces import IIntIds, IIntIdAddedEvent
-from z3ext.catalog.interfaces import ICatalog
-from z3ext.content.type.item import PersistentItem
-from z3ext.content.type.interfaces import IItemPublishing
-from z3ext.content.type.searchable import ContentSearchableText
-from z3ext.richtext.field import RichTextProperty
-from z3ext.content.revision.revisions import Revisions, IRevisions
+from zojax.catalog.interfaces import ICatalog
+from zojax.content.type.item import PersistentItem
+from zojax.content.type.interfaces import IItemPublishing
+from zojax.content.type.searchable import ContentSearchableText
+from zojax.richtext.field import RichTextProperty
+from zojax.content.revision.revisions import Revisions, IRevisions
 
 from revision import RevisionItem
 from interfaces import \

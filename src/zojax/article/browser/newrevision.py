@@ -29,10 +29,10 @@ from zope.app.intid.interfaces import IIntIds
 from zc.copy import copy
 from z3c.breadcrumb.interfaces import IBreadcrumb
 
-from z3ext.catalog.utils import listAllowedRoles
-from z3ext.catalog.interfaces import ICatalog
-from z3ext.content.type.interfaces import IContentType
-from z3ext.statusmessage.interfaces import IStatusMessage
+from zojax.catalog.utils import listAllowedRoles
+from zojax.catalog.interfaces import ICatalog
+from zojax.content.type.interfaces import IContentType
+from zojax.statusmessage.interfaces import IStatusMessage
 
 from zojax.article.interfaces import _, IArticles, IArticleDraft
 

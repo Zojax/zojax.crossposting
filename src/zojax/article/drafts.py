@@ -16,7 +16,7 @@
 $Id$
 """
 from zope import interface, component
-from z3ext.content.space.workspace import WorkspaceFactory
+from zojax.content.space.workspace import WorkspaceFactory
 
 from workspace import Articles
 from interfaces import _, IArticleDraft, IArticleDrafts, IArticleDraftsFactory
