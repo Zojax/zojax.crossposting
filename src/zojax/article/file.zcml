@@ -1,26 +1,26 @@
 <configure
    xmlns="http://namespaces.zope.org/zope"
-   xmlns:zojax="http://namespaces.zope.org/zojax"
+   xmlns:z3ext="http://namespaces.zope.org/z3ext"
    xmlns:browser="http://namespaces.zope.org/browser"
    i18n_domain="zojax.article">
 
-    <zojax:content
+    <z3ext:content
        title="File Article"
        name="zojax.filearticle"
        class=".file.File"
        ctclass=".file.FileType"
        schema=".interfaces.IFile"
-       type="zojax.content.type.interfaces.IActivePortalType"
+       type="z3ext.content.type.interfaces.IActivePortalType"
        description="An article."
        permission="zojax.AddArticle" />
 
     <class class=".file.File">
-      <implements interface="zojax.ownership.interfaces.IOwnerAware" />
-      <implements interface="zojax.activity.interfaces.IActivityAware" />
-      <implements interface="zojax.content.type.interfaces.IShareableContent" />
-      <implements interface="zojax.content.type.interfaces.ISearchableContent" />
-      <implements interface="zojax.content.type.interfaces.ITitleBasedName" />
-      <implements interface="zojax.content.discussion.interfaces.IDiscussible" />
+      <implements interface="z3ext.ownership.interfaces.IOwnerAware" />
+      <implements interface="z3ext.activity.interfaces.IActivityAware" />
+      <implements interface="z3ext.content.type.interfaces.IShareableContent" />
+      <implements interface="z3ext.content.type.interfaces.ISearchableContent" />
+      <implements interface="z3ext.content.type.interfaces.ITitleBasedName" />
+      <implements interface="z3ext.content.discussion.interfaces.IDiscussible" />
       <implements
 	 interface="zope.dublincore.interfaces.IDCDescriptiveProperties" />
       
@@ -28,12 +28,12 @@
 	 permission="zope.View"
 	 attributes="description"
 	 interface=".interfaces.IFile
-		    zojax.content.type.interfaces.IItemPublishing" />
+		    z3ext.content.type.interfaces.IItemPublishing" />
 
       <require
-	 permission="zojax.ModifyContent"
+	 permission="z3ext.ModifyContent"
 	 set_schema=".interfaces.IFile
-		     zojax.content.type.interfaces.IItemPublishing" />
+		     z3ext.content.type.interfaces.IItemPublishing" />
    
       <require
 	 permission="zojax.ManageArticle"
@@ -43,7 +43,7 @@
     <class class=".file.FileType">
       <require
          permission="zope.Public"
-         interface="zojax.content.type.interfaces.IContentType
+         interface="z3ext.content.type.interfaces.IContentType
                     zope.location.interfaces.ILocation" />
     </class>
 

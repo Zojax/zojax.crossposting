@@ -17,8 +17,8 @@ $Id$
 """
 from zope.security.proxy import removeSecurityProxy
 from zc.catalog.catalogindex import ValueIndex, SetIndex
-from zojax.content.type.interfaces import IContentType
-from zojax.catalog.utils import Indexable, getAccessList
+from z3ext.content.type.interfaces import IContentType
+from z3ext.catalog.utils import Indexable, getAccessList
 
 from interfaces import IArticle, IRevisionItem
 

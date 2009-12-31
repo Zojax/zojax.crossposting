@@ -1,26 +1,26 @@
 <configure
    xmlns="http://namespaces.zope.org/zope"
-   xmlns:zojax="http://namespaces.zope.org/zojax"
+   xmlns:z3ext="http://namespaces.zope.org/z3ext"
    xmlns:browser="http://namespaces.zope.org/browser"
    i18n_domain="zojax.article">
 
-  <zojax:content
+  <z3ext:content
      title="Article"
      name="zojax.article"
      schema=".interfaces.IArticle"
      class=".article.Article"
      containers="zojax.articledrafts"
-     type="zojax.content.type.interfaces.IActivePortalType"
+     type="z3ext.content.type.interfaces.IActivePortalType"
      description="An article."
      permission="zojax.AddArticle" />
   
   <class class=".article.Article">
-    <implements interface="zojax.ownership.interfaces.IOwnerAware" />
-    <implements interface="zojax.activity.interfaces.IActivityAware" />
-    <implements interface="zojax.content.type.interfaces.IShareableContent" />
-    <implements interface="zojax.content.type.interfaces.ISearchableContent" />
-    <implements interface="zojax.content.type.interfaces.ITitleBasedName" />
-    <implements interface="zojax.content.discussion.interfaces.IDiscussible" />
+    <implements interface="z3ext.ownership.interfaces.IOwnerAware" />
+    <implements interface="z3ext.activity.interfaces.IActivityAware" />
+    <implements interface="z3ext.content.type.interfaces.IShareableContent" />
+    <implements interface="z3ext.content.type.interfaces.ISearchableContent" />
+    <implements interface="z3ext.content.type.interfaces.ITitleBasedName" />
+    <implements interface="z3ext.content.discussion.interfaces.IDiscussible" />
     <implements
        interface="zope.dublincore.interfaces.IDCDescriptiveProperties" />
 
@@ -28,21 +28,21 @@
        permission="zope.View"
        attributes="description"
        interface=".interfaces.IArticle
-		  zojax.content.type.interfaces.IItemPublishing" />
+		  z3ext.content.type.interfaces.IItemPublishing" />
 
     <require
-       permission="zojax.ModifyContent"
+       permission="z3ext.ModifyContent"
        set_schema=".interfaces.IArticle
-		   zojax.content.type.interfaces.IItemPublishing"
-       interface="zojax.content.revision.interfaces.IRevisionsManagement" />
+		   z3ext.content.type.interfaces.IItemPublishing"
+       interface="z3ext.content.revision.interfaces.IRevisionsManagement" />
     
     <require
        permission="zojax.ManageArticle"
        interface=".interfaces.IArticleManagement" />
 
     <require
-       permission="zojax.ViewContentRevisions"
-       interface="zojax.content.revision.interfaces.IRevisions" />
+       permission="z3ext.ViewContentRevisions"
+       interface="z3ext.content.revision.interfaces.IRevisions" />
   </class>
   
   <adapter factory=".article.Sized" />

@@ -1,26 +1,26 @@
 <configure
    xmlns="http://namespaces.zope.org/zope"
-   xmlns:zojax="http://namespaces.zope.org/zojax"
+   xmlns:z3ext="http://namespaces.zope.org/z3ext"
    i18n_domain="zojax.article">
 
   <utility
      name="articleId"
      component=".indexes.articleId"
-     provides="zojax.catalog.interfaces.ICatalogIndexFactory" />
+     provides="z3ext.catalog.interfaces.ICatalogIndexFactory" />
 
   <utility
      name="articleRevId"
      component=".indexes.articleRevId"
-     provides="zojax.catalog.interfaces.ICatalogIndexFactory" />
+     provides="z3ext.catalog.interfaces.ICatalogIndexFactory" />
 
   <utility
      name="articleActiveStatus"
      component=".indexes.articleActiveStatus"
-     provides="zojax.catalog.interfaces.ICatalogIndexFactory" />
+     provides="z3ext.catalog.interfaces.ICatalogIndexFactory" />
 
   <utility
      name="articleDestination"
      component=".indexes.articleDestination"
-     provides="zojax.catalog.interfaces.ICatalogIndexFactory" />
+     provides="z3ext.catalog.interfaces.ICatalogIndexFactory" />
 
 </configure>

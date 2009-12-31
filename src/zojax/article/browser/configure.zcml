@@ -1,29 +1,29 @@
 <configure
    xmlns="http://namespaces.zope.org/zope"
-   xmlns:zojax="http://namespaces.zope.org/zojax"
+   xmlns:z3ext="http://namespaces.zope.org/z3ext"
    xmlns:browser="http://namespaces.zope.org/browser"
    i18n_domain="zojax.article">
 
   <include file="table.zcml" />
 
-  <zojax:pagelet
+  <z3ext:pagelet
      name="index.html"
      for="..interfaces.IArticle"
      template="article.pt"
      class=".article.ArticleView"
-     provides="zojax.content.type.interfaces.IContentView"
+     provides="z3ext.content.type.interfaces.IContentView"
      permission="zope.View" />
 
   <!-- creators -->
-  <zojax:pagelet
+  <z3ext:pagelet
      name="creators"
      type="wizard.step"
      for="..interfaces.IRevisionItem
-	  zojax.content.forms.interfaces.IEditContentWizard"
+	  z3ext.content.forms.interfaces.IEditContentWizard"
      class=".creators.CreatorsEditForm"
-     permission="zojax.ModifyContent" />
+     permission="z3ext.ModifyContent" />
 
-  <zojax:pageelement
+  <z3ext:pageelement
      name="content.byline"
      for="..interfaces.IRevisionItem"
      class=".article.ArticleByLine" />
@@ -43,7 +43,7 @@
      file="icons/publish.png"
      for=".interfaces.IPublishArticleAction" />
 
-  <zojax:pagelet
+  <z3ext:pagelet
      name="publish.html"
      for="..interfaces.IArticleDraft"
      template="publish.pt"
@@ -60,7 +60,7 @@
      file="icons/publish.png"
      for=".interfaces.INewRevisionAction" />
 
-  <zojax:pagelet
+  <z3ext:pagelet
      name="newrevision.html"
      for="..interfaces.IRevisionItem"
      template="newrevision.pt"
@@ -77,7 +77,7 @@
      file="icons/revisions.png"
      for=".interfaces.IRevisionsAction" />
 
-  <zojax:pagelet
+  <z3ext:pagelet
      name="articlerevisions"
      for="..interfaces.IRevisionItem"
      template="revisions.pt"
@@ -92,19 +92,19 @@
 
   <browser:icon
      name="zmi_icon"
-     for="zojax.content.zojax_filearticle"
+     for="z3ext.content.zojax_filearticle"
      file="file_icon.gif" />
   
   <browser:defaultView
      name="index.html"
      for="..interfaces.IFile" />
 
-  <zojax:pagelet
+  <z3ext:pagelet
      name="index.html"
      for="..interfaces.IFile"
      template="fileview.pt"
      class=".fileviews.FileView"
-     provides="zojax.content.type.interfaces.IContentView"
+     provides="z3ext.content.type.interfaces.IContentView"
      permission="zope.View" />
 
   <browser:page

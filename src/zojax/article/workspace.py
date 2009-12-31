@@ -17,9 +17,9 @@ $Id$
 """
 from zope import interface, component, event
 from zope.security.proxy import removeSecurityProxy
-from zojax.content.type.container import ContentContainer
-from zojax.content.space.interfaces import IContentSpace
-from zojax.content.space.workspace import WorkspaceFactory
+from z3ext.content.type.container import ContentContainer
+from z3ext.content.space.interfaces import IContentSpace
+from z3ext.content.space.workspace import WorkspaceFactory
 
 from interfaces import _, IArticles, IArticlesFactory
 

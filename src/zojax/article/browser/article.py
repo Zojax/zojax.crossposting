@@ -20,8 +20,8 @@ from zope.traversing.browser import absoluteURL
 from zope.dublincore.interfaces import IDCExtended
 from zope.app.security.interfaces import IAuthentication
 
-from zojax.ownership.interfaces import IOwnership
-from zojax.principal.profile.interfaces import IPersonalProfile
+from z3ext.ownership.interfaces import IOwnership
+from z3ext.principal.profile.interfaces import IPersonalProfile
 
 
 class ArticleView(object):

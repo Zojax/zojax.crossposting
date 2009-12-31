@@ -17,7 +17,7 @@ $Id$
 """
 from zope import interface, component
 from zope.size.interfaces import ISized
-from zojax.content.type.interfaces import IContentViewView
+from z3ext.content.type.interfaces import IContentViewView
 from zojax.article.interfaces import IFile
 
 from article import ArticleView

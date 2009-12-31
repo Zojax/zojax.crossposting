@@ -19,7 +19,7 @@ from zope import interface, component
 from zope.location import LocationProxy
 from zope.traversing.browser import absoluteURL
 from zope.publisher.interfaces import NotFound
-from zojax.content.actions.action import Action
+from z3ext.content.actions.action import Action
 from zojax.article.interfaces import IRevisionItem
 
 from interfaces import _, IRevisionsAction
