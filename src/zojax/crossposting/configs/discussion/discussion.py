@@ -11,21 +11,11 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ##############################################################################
-"""
+""" google ads portlet interfaces
 
 $Id$
 """
-from zope import component, interface
-from zope.component import getUtility, queryAdapter
-from z3ext.content.space.interfaces import IWorkspaceFactory
-from z3ext.content.permissions.permission import ContentPermission
+from z3ext.layoutform.subform import PageletEditSubForm
 
-
-class SpacePermission(ContentPermission):
-
-    def isAvailable(self):
-        wf = queryAdapter(self.context, IWorkspaceFactory, 'articles')
-        if wf is None or not self.context.isEnabled(wf):
-            return
-
-        return super(SpacePermission, self).isAvailable()
+class AddComment(PageletEditSubForm):
+    pass

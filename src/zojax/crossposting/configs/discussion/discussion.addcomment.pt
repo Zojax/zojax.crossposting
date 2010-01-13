@@ -1,0 +1,3 @@
+<div class="z-form-fieldset">
+  <tal:block content="structure pageelement:crossposting" />
+</div>

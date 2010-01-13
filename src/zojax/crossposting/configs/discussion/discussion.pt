@@ -1,0 +1,9 @@
+<tal:block define="dummy resourcepackage:zojax-crossposting" />
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $.fn.crossposting({textInputId: 'discussion-widgets-comment',
+                       buttonId: 'discussion-buttons-post',
+                       title: document.title});
+})
+</script>

@@ -9,4 +9,4 @@ update_egg()
     msgfmt ${1}/locales/ru/LC_MESSAGES/${2}.po -o ${1}/locales/ru/LC_MESSAGES/${2}.mo --no-hash
 }
 
-update_egg src/zojax/helpdesk zojax.helpdesk;
+update_egg src/zojax/crossposting zojax.crossposting;

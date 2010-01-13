@@ -1,0 +1,48 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:z3ext="http://namespaces.zope.org/z3ext"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   xmlns:i18n="http://namespaces.zope.org/i18n"
+   xmlns:zcml="http://namespaces.zope.org/zcml"
+   i18n_domain="zojax.crossposting">
+
+    <!-- resources -->
+  <z3ext:resourcedirectory
+     name="zojax-crossposting"
+     directory="resources"
+     mapping=".css:zrt" />
+
+  <z3ext:resourceinclude
+     name="zojax.crossposting.js"
+     library="zojax-crossposting" require="jquery"
+     type="javascript" path="zojax-crossposting/zojax.crossposting.js" />
+
+  <z3ext:resourceinclude
+     name="jquery.treeview.init.js"
+     library="zojax-crossposting" require="jquery"
+     type="javascript" path="zojax-crossposting/zojax.crossposting.init.js" />
+     
+  <!-- styles -->
+  <z3ext:resourceinclude
+     name="zojax.crossposting.css"
+     library="zojax-crossposting"
+     type="stylesheet"
+     path="zojax-crossposting/zojax.crossposting.css" filetype="zrt" />
+     
+
+  <z3ext:pageelement
+     title="Crossposting"
+     name="crossposting"
+     template="crossposting.pt"
+     provides=".interfaces.ICrosspostingManager"
+     />
+
+  <include zcml:condition="installed z3ext.principal.facebook"
+           package=".facebook" />
+           
+  <include package=".configs" />
+
+  <!-- translations -->
+  <i18n:registerTranslations directory="locales"/>
+
+</configure>

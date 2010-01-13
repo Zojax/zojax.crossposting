@@ -1,0 +1,46 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:z3ext="http://namespaces.zope.org/z3ext"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   xmlns:i18n="http://namespaces.zope.org/i18n"
+   i18n_domain="zojax.crossposting">
+
+  <!-- resources -->
+  <z3ext:resourcedirectory
+     name="zojax-crossposting-facebook"
+     directory="resources"
+     mapping=".css:zrt" />
+
+  <z3ext:resourceinclude
+     name="zojax.crossposting.facebook.js"
+     library="zojax-crossposting" require="jquery"
+     type="javascript" path="zojax-crossposting-facebook/zojax.crossposting.facebook.js" />
+
+  <!-- styles -->
+  <z3ext:resourceinclude
+     name="zojax.crossposting.facebook.css"
+     library="zojax-crossposting"
+     type="stylesheet"
+     path="zojax-crossposting-facebook/zojax.crossposting.facebook.css" filetype="zrt" />
+     
+
+  <registerIn registry="z3ext.product.z3ext-principal-facebook">
+    
+      <z3ext:pageelement
+        title="Item"
+        name="facebook.item"
+        template="item.pt"
+        manager="..interfaces.ICrosspostingManager"
+        weight="1" />
+        
+      <z3ext:pageelement
+        title="Headers"
+        name="facebook.headers"
+        template="headers.pt"
+        class=".headers.Headers"
+        manager="..interfaces.ICrosspostingHeaders"
+        weight="1" />
+        
+  </registerIn>
+
+</configure>

@@ -21,14 +21,14 @@ from setuptools import setup, find_packages
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
-version='0.1.0dev'
+version='0'
 
 
-setup(name = 'zojax.article',
+setup(name = 'zojax.crossposting',
       version = version,
-      author = 'Nikolay Kim',
-      author_email = 'fafhrd91@gmail.com',
-      description = "Helpdesk for z3ext.",
+      author = 'Anatoly Bubenkov',
+      author_email = 'bubenkoff@gmail.com',
+      description = "Crossposting for z3ext.",
       long_description = (
           'Detailed Documentation\n' +
           '======================\n'
@@ -51,27 +51,9 @@ setup(name = 'zojax.article',
       package_dir = {'':'src'},
       namespace_packages=['zojax',],
       install_requires = ['setuptools', 'rwproperty',
-                          'z3ext.company',
-                          'z3ext.content.actions',
-                          'z3ext.content.space',
-                          'z3ext.content.tagging',
-                          'z3ext.content.discussion',
-                          'z3ext.content.permissions',
-                          'z3ext.content.notifications',
-                          'z3ext.content.schema',
-                          'z3ext.content.revision',
-                          'z3ext.content.workflow',
-                          'z3ext.principal.profile',
                           'z3ext.layout',
                           'z3ext.layoutform',
-                          'z3ext.batching',
-                          'z3ext.product',
-                          'z3ext.company',
-                          'z3ext.formatter',
-                          'z3ext.statusmessage',
-                          'z3ext.widget.checkbox',
-                          'z3ext.mailin',
-                          'zojax.report',
+                          'z3ext.pageelement',
                           ],
       extras_require = dict(test=['zope.app.testing',
                                   'zope.app.zcmlfiles',

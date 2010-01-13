@@ -11,26 +11,22 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ##############################################################################
-"""
+""" google ads portlet interfaces
 
 $Id$
 """
-from zope import interface, component
-from z3ext.content.space.workspace import WorkspaceFactory
+from zope import schema, interface
+from zope.i18nmessageid import MessageFactory
 
-from workspace import Articles
-from interfaces import _, IArticleDraft, IArticleDrafts, IArticleDraftsFactory
-
-
-class ArticleDrafts(Articles):
-    interface.implements(IArticleDrafts)
+from z3ext.pageelement.interfaces import IPageElement
 
 
-class ArticleDraftsFactory(WorkspaceFactory):
-    interface.implements(IArticleDraftsFactory)
+_ = MessageFactory('zojax.crossposting')
 
-    name = 'articledrafts'
-    title = _(u'Article drafts')
-    description = _(u'Article drafts workspace.')
-    weight = 91
-    factory = ArticleDrafts
+
+class ICrosspostingHeaders(interface.Interface):
+    """ crossposting headers """
+
+
+class ICrosspostingManager(IPageElement):
+    """ crossposting manager """
