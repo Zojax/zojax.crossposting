@@ -1,0 +1,15 @@
+<div class="z-form-fieldset">
+  <tal:block content="structure pageelement:crossposting" />
+</div>
+
+<tal:block define="dummy resourcepackage:zojax-crossposting" />
+<script type="text/javascript" tal:content="string: var url = '${view/url}';" />
+<script type="text/javascript">
+$(document).ready(function(){
+    $.fn.crossposting({descriptionInputId: 'form-widgets-text',
+                       titleInputId: 'content-widgets-title',
+                       buttonId: 'form-buttons-publish',
+                       url: url,
+                       });
+})
+</script>

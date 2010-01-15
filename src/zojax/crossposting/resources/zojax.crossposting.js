@@ -16,21 +16,24 @@
 			settings = $.extend({
 				textInputId: "",
                 titleInputId: "",
+                descriptionInputId: "",
                 formId: "",
                 buttonId: "",
+                text: '',
                 title: '',
                 description: '',
-                url: ''
+                url: '',
+                confirmMessage: 'Your comment please'
 			}, settings);
 			
 
 			var textInput = settings.textInputId ? $('#'+settings.textInputId):false;
 			var titleInput = settings.titleInputId ? $('#'+settings.titleInputId):false;
+			var descriptionInput = settings.descriptionInputId ? $('#'+settings.descriptionInputId):false;
 			var button = settings.buttonId ? $('#'+settings.buttonId):false;
 			var form = settings.formId ? $('#'+settings.formId):false;
 			
-			var cnt = $.fn.crossposting.services.length
-			
+            var cnt = $.fn.crossposting.services.length;
 			function click_callback() {
 			    cnt -= 1
 			    if (cnt <= 0) {
@@ -38,16 +41,20 @@
 			    }
 			}
 			button.one('click', function(){
-			    var text = textInput.val();
-			            for (i = 0; i < $.fn.crossposting.services.length; i++) {
-			                var plugin = $.fn.crossposting.services[i];
-			                plugin({text:text, 
-			                        title:settings.title, 
-			                        description: settings.description,
-			                        url: settings.url,
-			                        callback: click_callback})
-			            }
-			            return false;
+			        settings.title = settings.title || (titleInput ? titleInput.val():'');
+		            settings.description = settings.description || (descriptionInput ? descriptionInput.val():'');
+		            settings.text = settings.text || (textInput ? textInput.val():'');
+
+			        for (i = 0; i < $.fn.crossposting.services.length; i++) {
+    	                var plugin = $.fn.crossposting.services[i];
+    	                plugin({text:settings.text, 
+    	                        title:settings.title, 
+    	                        description: settings.description,
+    	                        url: settings.url,
+    	                        confirmMessage: settings.confirmMessage,
+    	                        callback: click_callback})
+    	            }
+    	            return false;
 			    });
 			
 	    };

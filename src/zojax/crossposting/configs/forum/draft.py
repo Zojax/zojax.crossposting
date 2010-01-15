@@ -16,9 +16,28 @@
 $Id$
 """
 from zope import interface
+from zope.traversing.browser import absoluteURL
 
+from z3ext.content.forms.interfaces import IAddContentWizard
 from z3ext.layoutform.subform import PageletEditSubForm
 from z3ext.layoutform import Fields
 
-class AddComment(PageletEditSubForm):
+
+class AddTopic(PageletEditSubForm):
+
+    url = ''
+
+    def update(self):
+        super(AddTopic, self).update()
+        if not self.isAvailable():
+            return
+        location = self.parentForm.wizard.draft.getLocation()
+        if location is not None:
+            self.url = absoluteURL(location, self.request)
+
+    def isAvailable(self):
+        return IAddContentWizard.providedBy(self.parentForm.wizard)
+
+
+class AddMessage(PageletEditSubForm):
     pass

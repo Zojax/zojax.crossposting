@@ -8,5 +8,11 @@
 
   <include zcml:condition="installed z3ext.content.discussion"
            package=".discussion" />
+           
+  <include zcml:condition="installed z3ext.blogger"
+           package=".blogger" />
+           
+  <include zcml:condition="installed z3ext.forum"
+           package=".forum" />
 
 </configure>

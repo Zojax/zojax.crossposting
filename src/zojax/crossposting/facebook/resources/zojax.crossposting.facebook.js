@@ -12,7 +12,7 @@
 ;(function($) {
 
     $.fn.crossposting.services.facebook = function(params) {
-        if (!$('#zojax-crossposting-facebook-post').val())
+        if (!$('#zojax-crossposting-facebook-post').attr('checked'))
             return params.callback()
         FB_RequireFeatures(["Api"], function(){ 
                 FB.Facebook.init($.fn.crossposting.services.facebook.api_key, $.fn.crossposting.services.facebook.channel_path);
@@ -23,7 +23,7 @@
                     }
                   }
                 FB.Connect.streamPublish(params.text, attachment, null, null,
-                                         'Confirm your comment please',
+                                         params.confirmMessage,
                                          stream_callback);
             })
 

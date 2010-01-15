@@ -7,12 +7,10 @@
    i18n_domain="zojax.crossposting">
    
   <z3ext:pageelement
-     zcml:condition="installed z3ext.content.discussion"
      name="content.discussion.crossposting"
      for="z3ext.content.discussion.interfaces.IContentDiscussionAware"
      template="discussion.pt"
-     manager="z3ext.content.browser.interfaces.IContentBottom"
-     weight="99999" />
+     />
      
   <z3ext:pagelet
      name="crossposting"

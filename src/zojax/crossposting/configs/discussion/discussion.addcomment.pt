@@ -1,3 +1,6 @@
 <div class="z-form-fieldset">
   <tal:block content="structure pageelement:crossposting" />
 </div>
+
+<tal:block define="context context/context" 
+           content="structure pageelement:content.discussion.crossposting" />
