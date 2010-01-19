@@ -2,9 +2,9 @@ from zope.component import getUtility
 from zope.app.component.hooks import getSite
 from zope.traversing.browser import absoluteURL
 
-from z3ext.resourcepackage.library import includeInplaceSource
+from zojax.resourcepackage.library import includeInplaceSource
 
-from z3ext.principal.facebook.interfaces import IFacebookAuthenticationProduct
+from zojax.principal.facebook.interfaces import IFacebookAuthenticationProduct
 
 script = """
     <script type="text/javascript">

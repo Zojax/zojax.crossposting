@@ -17,8 +17,8 @@ $Id$
 """
 from zope import interface
 
-from z3ext.layoutform.subform import PageletEditSubForm
-from z3ext.layoutform import Fields
+from zojax.layoutform.subform import PageletEditSubForm
+from zojax.layoutform import Fields
 
 class AddComment(PageletEditSubForm):
     pass

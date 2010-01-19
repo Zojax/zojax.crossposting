@@ -18,7 +18,7 @@ $Id$
 from zope import schema, interface
 from zope.i18nmessageid import MessageFactory
 
-from z3ext.pageelement.interfaces import IPageElement
+from zojax.pageelement.interfaces import IPageElement
 
 
 _ = MessageFactory('zojax.crossposting')

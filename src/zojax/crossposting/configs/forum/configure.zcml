@@ -1,35 +1,35 @@
 <configure
    xmlns="http://namespaces.zope.org/zope"
-   xmlns:z3ext="http://namespaces.zope.org/z3ext"
+   xmlns:zojax="http://namespaces.zope.org/zojax"
    xmlns:browser="http://namespaces.zope.org/browser"
    xmlns:i18n="http://namespaces.zope.org/i18n"
    xmlns:zcml="http://namespaces.zope.org/zcml"
    i18n_domain="zojax.crossposting">
    
-  <registerIn registry="z3ext.product.blogger">
+  <registerIn registry="zojax.product.blogger">
    
-     <z3ext:pagelet
+     <zojax:pagelet
         name="crossposting"
         type="form.subform"
         label="Cross posting"
-        for="z3ext.forum.interfaces.ITopic
-             z3ext.content.forms.interfaces.IContentStep"
+        for="zojax.forum.interfaces.ITopic
+             zojax.content.forms.interfaces.IContentStep"
         template="topic.pt"
         class=".draft.AddTopic"
-        provides="z3ext.layoutform.interfaces.IPageletFormView"
-        permission="z3ext.forum.AddTopic"
+        provides="zojax.layoutform.interfaces.IPageletFormView"
+        permission="zojax.forum.AddTopic"
         weight="155" />
         
-     <z3ext:pagelet
+     <zojax:pagelet
         name="crossposting"
         type="form.subform"
         label="Cross posting"
-        for="z3ext.forum.interfaces.ITopic
-             z3ext.forum.browser.reply.ReplyForm"
+        for="zojax.forum.interfaces.ITopic
+             zojax.forum.browser.reply.ReplyForm"
         template="message.pt"
         class=".draft.AddMessage"
-        provides="z3ext.layoutform.interfaces.IPageletFormView"
-        permission="z3ext.forum.AddMessage"
+        provides="zojax.layoutform.interfaces.IPageletFormView"
+        permission="zojax.forum.AddMessage"
         weight="155" />
      
   </registerIn>

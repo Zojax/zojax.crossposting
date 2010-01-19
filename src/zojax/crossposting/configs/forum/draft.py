@@ -18,9 +18,9 @@ $Id$
 from zope import interface
 from zope.traversing.browser import absoluteURL
 
-from z3ext.content.forms.interfaces import IAddContentWizard
-from z3ext.layoutform.subform import PageletEditSubForm
-from z3ext.layoutform import Fields
+from zojax.content.forms.interfaces import IAddContentWizard
+from zojax.layoutform.subform import PageletEditSubForm
+from zojax.layoutform import Fields
 
 
 class AddTopic(PageletEditSubForm):

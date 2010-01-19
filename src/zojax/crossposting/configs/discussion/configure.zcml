@@ -1,29 +1,29 @@
 <configure
    xmlns="http://namespaces.zope.org/zope"
-   xmlns:z3ext="http://namespaces.zope.org/z3ext"
+   xmlns:zojax="http://namespaces.zope.org/zojax"
    xmlns:browser="http://namespaces.zope.org/browser"
    xmlns:i18n="http://namespaces.zope.org/i18n"
    xmlns:zcml="http://namespaces.zope.org/zcml"
    i18n_domain="zojax.crossposting">
    
-  <z3ext:pageelement
+  <zojax:pageelement
      name="content.discussion.crossposting"
-     for="z3ext.content.discussion.interfaces.IContentDiscussionAware"
+     for="zojax.content.discussion.interfaces.IContentDiscussionAware"
      template="discussion.pt"
      />
      
-  <z3ext:pagelet
+  <zojax:pagelet
      name="crossposting"
      type="form.subform"
-     for="z3ext.content.discussion.interfaces.IContentDiscussionAware
-          z3ext.content.discussion.browser.post.PostCommentForm"
+     for="zojax.content.discussion.interfaces.IContentDiscussionAware
+          zojax.content.discussion.browser.post.PostCommentForm"
      class=".discussion.AddComment"
      weight="9999" />
      
-  <z3ext:pagelet
+  <zojax:pagelet
      type="form"
      for=".discussion.AddComment"
      template="discussion.addcomment.pt"
-     layer="z3ext.layoutform.interfaces.ILayoutFormLayer" />
+     layer="zojax.layoutform.interfaces.ILayoutFormLayer" />
      
 </configure>
