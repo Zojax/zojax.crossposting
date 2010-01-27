@@ -18,7 +18,7 @@
      type="javascript" path="zojax-crossposting/zojax.crossposting.js" />
 
   <zojax:resourceinclude
-     name="jquery.treeview.init.js"
+     name="zojax.crossposting.init.js"
      library="zojax-crossposting" require="jquery"
      type="javascript" path="zojax-crossposting/zojax.crossposting.init.js" />
      

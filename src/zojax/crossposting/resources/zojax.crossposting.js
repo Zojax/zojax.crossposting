@@ -34,6 +34,8 @@
 			var form = settings.formId ? $('#'+settings.formId):false;
 			
             var cnt = $.fn.crossposting.services.length;
+            if (cnt == 0)
+                return;
 			function click_callback() {
 			    cnt -= 1
 			    if (cnt <= 0) {
@@ -45,7 +47,7 @@
 		            settings.description = settings.description || (descriptionInput ? descriptionInput.val():'');
 		            settings.text = settings.text || (textInput ? textInput.val():'');
 
-			        for (i = 0; i < $.fn.crossposting.services.length; i++) {
+			        for (i = 0; i < cnt; i++) {
     	                var plugin = $.fn.crossposting.services[i];
     	                plugin({text:settings.text, 
     	                        title:settings.title, 
