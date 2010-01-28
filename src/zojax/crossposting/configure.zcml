@@ -29,16 +29,30 @@
      type="stylesheet"
      path="zojax-crossposting/zojax.crossposting.css" filetype="zrt" />
      
-
   <zojax:pageelement
      title="Crossposting"
      name="crossposting"
      template="crossposting.pt"
      provides=".interfaces.ICrosspostingManager"
      />
+     
+  <zojax:pageelement
+     title="Crossposting headers"
+     name="crossposting.headers"
+     template="crossposting-headers.pt"
+     manager="zojax.theme.default.interfaces.IPageHeaders"
+     weight="200"
+     provides=".interfaces.ICrosspostingHeaders"
+     layer="zojax.theme.default.interfaces.ICommonSkinLayer"
+     class=".headers.CrosspostingHeaders"
+     zcml:condition="installed zojax.theme.default"
+     />
 
   <include zcml:condition="installed zojax.principal.facebook"
            package=".facebook" />
+           
+  <include zcml:condition="installed zojax.principal.twitter"
+           package=".twitter" />
            
   <include package=".configs" />
 

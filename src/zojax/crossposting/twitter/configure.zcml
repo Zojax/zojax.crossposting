@@ -1,0 +1,46 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:zojax="http://namespaces.zope.org/zojax"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   xmlns:i18n="http://namespaces.zope.org/i18n"
+   i18n_domain="zojax.crossposting">
+
+  <!-- resources -->
+  <zojax:resourcedirectory
+     name="zojax-crossposting-twitter"
+     directory="resources"
+     mapping=".css:zrt" />
+
+  <zojax:resourceinclude
+     name="zojax.crossposting.twitter.js"
+     library="zojax-crossposting" require="jquery"
+     type="javascript" path="zojax-crossposting-twitter/zojax.crossposting.twitter.js" />
+
+  <!-- styles -->
+  <zojax:resourceinclude
+     name="zojax.crossposting.twitter.css"
+     library="zojax-crossposting"
+     type="stylesheet"
+     path="zojax-crossposting-twitter/zojax.crossposting.twitter.css" filetype="zrt" />
+     
+
+  <registerIn registry="zojax.product.zojax-authentication-twitter">
+    
+      <zojax:pageelement
+        title="Item"
+        name="twitter.item"
+        template="item.pt"
+        manager="..interfaces.ICrosspostingManager"
+        weight="1" />
+        
+      <zojax:pageelement
+        title="Headers"
+        name="twitter.headers"
+        template="headers.pt"
+        class=".headers.Headers"
+        manager="..interfaces.ICrosspostingHeaders"
+        weight="1" />
+        
+  </registerIn>
+
+</configure>

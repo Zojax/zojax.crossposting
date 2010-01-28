@@ -24,7 +24,7 @@ from zojax.pageelement.interfaces import IPageElement
 _ = MessageFactory('zojax.crossposting')
 
 
-class ICrosspostingHeaders(interface.Interface):
+class ICrosspostingHeaders(IPageElement):
     """ crossposting headers """
 
 

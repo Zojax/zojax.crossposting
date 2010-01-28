@@ -1,9 +1,10 @@
 <tal:block define="dummy resourcepackage:zojax-crossposting" />
-
+<script type="text/javascript" tal:content="string: var url = '${request/URL}';" />
 <script type="text/javascript">
 $(document).ready(function(){
     $.fn.crossposting({textInputId: 'discussion-widgets-comment',
                        buttonId: 'discussion-buttons-post',
-                       title: document.title});
+                       title: document.title,
+                       url: url,});
 })
 </script>
