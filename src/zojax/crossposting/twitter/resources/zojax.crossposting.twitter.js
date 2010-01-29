@@ -14,10 +14,10 @@
     $.fn.crossposting.services.twitter = function(params) {
         if (!$('#zojax-crossposting-twitter-post').attr('checked'))
             return params.callback()
-        if (!$.fn.crossposting.services.twitter.logged_in) {
-            var url = 'http://twitter.com/home?status=' + encodeURIComponent(params.text + ' | ' + params.title + ' ' + params.description + '(' +params.url + ')');
-            $.fn.crossposting.services.twitter.spawn_modal_and_wait(url, params.callback)
-        }
+        //if (!$.fn.crossposting.services.twitter.logged_in) {
+        var url = 'http://twitter.com/home?status=' + encodeURIComponent(params.text + ' | ' + params.title + ' ' + params.description + '(' +params.url + ')');
+        $.fn.crossposting.services.twitter.spawn_modal_and_wait(url, params.callback)
+        //}
     };
     
     $.fn.crossposting.services.twitter.modal_window = null;
