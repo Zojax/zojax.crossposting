@@ -25,6 +25,6 @@ class Headers(object):
         key = product.consumerKey
         secret = product.consumerSecret
         logged_in = False
-        includeInplaceSource(script % dict(key=key, secret=secret, \
+        includeInplaceSource(script % dict(key=simplejson.dumps(key), secret=simplejson.dumps(secret), \
                                            logged_in=simplejson.dumps(logged_in)), ('zojax-crossposting',))
         return super(Headers, self).render()
