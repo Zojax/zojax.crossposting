@@ -27,6 +27,8 @@ _ = MessageFactory('zojax.crossposting')
 class ICrosspostingHeaders(IPageElement):
     """ crossposting headers """
 
+class ICrosspostingBodyHeaders(IPageElement):
+    """ crossposting body headers """
 
 class ICrosspostingManager(IPageElement):
     """ crossposting manager """

@@ -2,4 +2,8 @@ from zojax.resourcepackage.library import includes
 
 
 class CrosspostingHeaders(object):
-    pass    
+    pass 
+
+
+class CrosspostingBodyHeaders(object):
+    pass       

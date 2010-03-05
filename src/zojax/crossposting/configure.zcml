@@ -47,6 +47,18 @@
      class=".headers.CrosspostingHeaders"
      zcml:condition="installed zojax.theme.default"
      />
+     
+  <zojax:pageelement
+     title="Crossposting body headers"
+     name="crossposting.bodyheaders"
+     template="crossposting-headers.pt"
+     manager="zojax.theme.default.interfaces.IPageBodyHeaders"
+     weight="200"
+     provides=".interfaces.ICrosspostingBodyHeaders"
+     layer="zojax.theme.default.interfaces.ICommonSkinLayer"
+     class=".headers.CrosspostingBodyHeaders"
+     zcml:condition="installed zojax.theme.default"
+     />
 
   <include zcml:condition="installed zojax.principal.facebook"
            package=".facebook" />
