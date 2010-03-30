@@ -12,18 +12,33 @@
      template="discussion.pt"
      />
      
-  <zojax:pagelet
-     name="crossposting"
-     type="form.subform"
-     for="zojax.content.discussion.interfaces.IContentDiscussionAware
-          zojax.content.discussion.browser.post.PostCommentForm"
-     class=".discussion.AddComment"
-     weight="9999" />
+<!--  <zojax:pagelet-->
+<!--     name="crossposting"-->
+<!--     type="form.subform"-->
+<!--     for="zojax.content.discussion.interfaces.IContentDiscussionAware-->
+<!--          zojax.content.discussion.browser.post.PostCommentForm"-->
+<!--     class=".discussion.AddComment"-->
+<!--     weight="9999" />-->
      
-  <zojax:pagelet
-     type="form"
-     for=".discussion.AddComment"
-     template="discussion.addcomment.pt"
-     layer="zojax.layoutform.interfaces.ILayoutFormLayer" />
+  <adapter
+     name="crossposting"
+     provides="zojax.layoutform.interfaces.IPageletSubform"
+     for="zojax.content.discussion.interfaces.IContentDiscussionAware
+          zojax.content.discussion.browser.post.PostCommentForm
+          zojax.layoutform.interfaces.ILayoutFormLayer"
+     factory=".discussion.AddComment"
+     />
+     
+<!--  <zojax:pagelet-->
+<!--     type="form"-->
+<!--     for=".discussion.AddComment"-->
+<!--     template="discussion.addcomment.pt"-->
+<!--     layer="zojax.layoutform.interfaces.ILayoutFormLayer" />-->
+     
+  <adapter
+     provides="zojax.layoutform.interfaces.IPageletFormView"
+     for=".discussion.AddComment zojax.layoutform.interfaces.ILayoutFormLayer"
+     factory=".discussion.AddCommentForm"
+     />
      
 </configure>

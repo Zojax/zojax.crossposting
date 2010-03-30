@@ -16,9 +16,17 @@
 $Id$
 """
 from zope import interface
+from z3c.pt.pagetemplate import ViewPageTemplateFile
 
+from zojax.layout.pagelet import BrowserPagelet
 from zojax.layoutform.subform import PageletEditSubForm
 from zojax.layoutform import Fields
 
+
 class AddComment(PageletEditSubForm):
-    pass
+    weight=9999
+
+
+class AddCommentForm(BrowserPagelet):
+    
+    template = ViewPageTemplateFile('discussion.addcomment.pt')
