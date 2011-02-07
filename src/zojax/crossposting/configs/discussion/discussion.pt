@@ -5,6 +5,6 @@ $(document).ready(function(){
     $.fn.crossposting({textInputId: 'discussion-widgets-comment',
                        buttonId: 'discussion-buttons-post',
                        title: document.title,
-                       url: url,});
+                       url: url});
 })
 </script>

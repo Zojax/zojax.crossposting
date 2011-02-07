@@ -9,7 +9,7 @@ $(document).ready(function(){
     $.fn.crossposting({descriptionInputId: 'form-widgets-text',
                        titleInputId: 'content-widgets-title',
                        buttonId: 'form-buttons-publish',
-                       url: url,
+                       url: url
                        });
 })
 </script>

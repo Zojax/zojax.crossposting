@@ -13,7 +13,7 @@ $(document).ready(function(){
                        buttonId: 'form-buttons-reply',
                        title: title,
                        description: description,
-                       url: url,
+                       url: url
                        });
 })
 </script>
