@@ -1,5 +1,5 @@
 <div class="z-form-field">
   <label title="" for="zojax-crossposting-facebook-post" i18n:translate="">Post to Facebook</label>
   <div class="z-form-help"/>
-  <input type="checkbox" id="zojax-crossposting-facebook-post" name="zojax.crossposting.facebook.post" value="true"></input>
+  <input type="checkbox" id="zojax-crossposting-facebook-post" name="zojax.crossposting.facebook.post" value="true" />
 </div>
